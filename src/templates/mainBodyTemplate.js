@@ -6,7 +6,6 @@ import overviewTemplate from './overview-template.js';
 import endpointTemplate from './endpoint-template.js';
 import serverTemplate from './server-template.js';
 import securitySchemeTemplate from './security-scheme-template.js';
-import navbarTemplate from './navbar-template.js';
 import advancedSearchTemplate from './advance-search-template.js';
 import SetTheme from '../utils/theme.js';
 import ColorUtils from '../utils/color-utils.js';
@@ -28,13 +27,11 @@ export default function mainBodyTemplate() {
   /* eslint-disable indent */
   return html`
     ${SetTheme.call(this, newTheme)}
-    
+
     <!-- Advanced Search -->
     ${this.hideSearch ? '' : advancedSearchTemplate.call(this)}
 
     <div id='the-main-body' class="body">
-      <!-- Side Nav -->
-      ${(this.renderStyle === 'focused' && this.resolvedSpec) ? navbarTemplate.call(this) : ''}
 
       <!-- Main Content -->
       ${this.loading === true
@@ -70,7 +67,7 @@ export default function mainBodyTemplate() {
           </div>
         </main>`
       }
-    </div>  
+    </div>
   `;
 }
 /* eslint-enable indent */

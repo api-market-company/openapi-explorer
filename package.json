@@ -73,7 +73,7 @@
     "build:commonjs": "NODE_ENV=production BABEL_ENV=commonjs babel src --out-dir dist/lib",
     "build:es": "NODE_ENV=production BABEL_ENV=es babel src --out-dir dist/es",
     "start": "webpack serve --mode=development --port=8080",
-    "serve": "serve -p 8080 mocks",
+    "serve": "serve -p 8090 mocks",
     "site": "serve -p 8080 site",
     "lint": "eslint --ext .js src",
     "test": "ava tests/**/*.test.js"

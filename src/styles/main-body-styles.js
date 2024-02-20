@@ -27,9 +27,9 @@ export default css`
         text-decoration: none;
       }
 
-      .main-content { 
+      .main-content {
         margin:0;
-        padding: 0; 
+        padding: 0;
         display:block;
         flex:1;
         height:100%;
@@ -58,7 +58,7 @@ export default css`
         padding: 0 8px 0 4px;
         border-bottom: 1px solid var(--border-color);
       }
-      .section-gap { 
+      .section-gap {
         padding: 24px 0px 0px;
       }
       .section-tag-header {
@@ -82,17 +82,12 @@ export default css`
         display:none;
       }
 
-      .logo {
-        height:36px;
-        width:36px;
-        margin-left:5px; 
-      }
       .only-large-screen-flex,
       .only-large-screen{
         display:none;
       }
       .header-title{
-        font-size:calc(var(--font-size-regular) + 8px); 
+        font-size:calc(var(--font-size-regular) + 8px);
         padding:0 8px;
       }
       .tag.title {
@@ -108,7 +103,7 @@ export default css`
         background:var(--header-color-darker);
         color:var(--header-fg);
         border:1px solid var(--header-color-border);
-        flex:1; 
+        flex:1;
         padding-right:24px;
         border-radius:3px;
       }
@@ -119,7 +114,7 @@ export default css`
         cursor: not-allowed;
       }
       .loader {
-        margin: 16px auto 16px auto; 
+        margin: 16px auto 16px auto;
         border: 4px solid var(--bg3);
         border-radius: 50%;
         border-top: 4px solid var(--primary-color);
@@ -129,10 +124,10 @@ export default css`
       }
       .expanded-endpoint-body, .expanded-endpoint-component {
         position: relative;
-        padding: 6px 0px; 
+        padding: 6px 0px;
       }
 
-      .divider { 
+      .divider {
         border-top: 2px solid var(--border-color);
         margin: 24px 0;
         width:100%;
@@ -186,10 +181,6 @@ export default css`
       }
 
       @media only screen and (min-width: 768px) {
-        .nav-bar {
-          width: 260px;
-          display:flex;
-        }
         .only-large-screen{
           display:block;
         }
@@ -197,10 +188,10 @@ export default css`
           display:flex;
         }
         .section-gap {
-          padding: 24px 24px; 
+          padding: 24px 24px;
         }
-        .section-gap--read-mode { 
-          padding: 24px 8px; 
+        .section-gap--read-mode {
+          padding: 24px 8px;
         }
         .section-gap--focused-mode {
           padding: 1.5rem;
@@ -211,15 +202,4 @@ export default css`
         }
       }
 
-      @media only screen and (min-width: 1024px) {
-        .nav-bar {
-          width: 330px;
-          display:flex;
-        }
-        .section-gap--read-mode { 
-          padding: 24px 24px 12px;
-        }
-        .main-content-inner {
-          padding: 24px;
-        }
-      }`;
+      `;

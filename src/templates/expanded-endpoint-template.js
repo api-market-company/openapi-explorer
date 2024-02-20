@@ -11,7 +11,6 @@ import '../components/api-response.js';
 export function expandedEndpointBodyTemplate(path, tagName = '') {
   // Filter API Keys that are non-empty and are applicable to the the path
   const nonEmptyApiKeys = this.resolvedSpec.securitySchemes.filter((v) => (v.finalKeyValue && path.security && path.security.some((ps) => ps[v.apiKeyId]))) || [];
-
   const codeSampleTabPanel = path.xCodeSamples ? codeSamplesTemplate.call(this, path.xCodeSamples) : '';
   return html`
     ${this.renderStyle === 'read' ? html`<div class='divider' part="operation-divider"></div>` : ''}
@@ -20,10 +19,10 @@ export function expandedEndpointBodyTemplate(path, tagName = '') {
       ${path.deprecated ? html`<div class="bold-text red-text"> DEPRECATED </div>` : ''}
       <div style="display: flex; justify-content: space-between">
         <div style="flex-grow: 1">
-          <h2>${path.shortSummary || `${path.method.toUpperCase()} ${path.path}`}</h2>
-          <div class='mono-font part="section-operation-url" regular-font-size' style='padding: 8px 0; color:var(--fg3)'> 
+          <h2>${path.extensions['x-title'] || `${path.method.toUpperCase()} ${path.path}`}</h2>
+          <div class='mono-font part="section-operation-url" regular-font-size' style='padding: 8px 0; color:var(--fg3)'>
             ${path.isWebhook ? html`<span style="color:var(--primary-color)"> WEBHOOK </span>` : ''}
-            <span part="label-operation-method" class='regular-font upper method-fg bold-text ${path.method}'>${path.method}</span> 
+            <span part="label-operation-method" class='regular-font upper method-fg bold-text ${path.method}'>${path.method}</span>
             <span part="label-operation-path">${path.path}</span>
           </div>
         </div>
@@ -52,7 +51,7 @@ export function expandedEndpointBodyTemplate(path, tagName = '') {
           fill-defaults = "${!this.hideDefaults}"
           display-nulls="${!!this.includeNulls}"
           enable-console = "${!this.hideExecution}"
-          render-style="${this.renderStyle}" 
+          render-style="${this.renderStyle}"
           schema-style = "${this.displaySchemaAsTree ? 'tree' : 'table'}"
           active-schema-tab = "${this.defaultSchemaTab}"
           schema-expand-level = "${this.schemaExpandLevel}"
