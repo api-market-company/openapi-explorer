@@ -50,18 +50,7 @@ export default function mainBodyTemplate() {
                 </div>`
               : html`
                 <div class="operations-root" @click="${(e) => { this.handleHref(e); }}">
-                  ${this.renderStyle === 'focused'
-                    ? html`${focusedEndpointTemplate.call(this)}`
-                    : html`
-                      ${!this.hideInfo ? overviewTemplate.call(this) : ''}
-                      ${!this.hideServerSelection ? serverTemplate.call(this) : ''}
-                      ${!this.hideAuthentication ? securitySchemeTemplate.call(this) : ''}
-                      <section id='section'
-                        class='observe-me ${this.renderStyle === 'focused' ? 'section-gap--focused-mode' : 'section-gap'}'>
-                        <slot name="custom-section"></slot>
-                      </section>
-                      ${endpointTemplate.call(this)}`
-                  }
+                  ${focusedEndpointTemplate.call(this)}
                 </div>`
             }
           </div>
